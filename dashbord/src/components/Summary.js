@@ -8,7 +8,7 @@ const Summary = () => {
     const fetchUser = async () => {
       try {
         const { data } = await axios.post(
-          "http://localhost:3002/auth/auth-check",
+          "https://zerodha-clone-w3y8.onrender.com/auth/auth-check",
           {},
           { withCredentials: true }
         );

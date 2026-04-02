@@ -19,7 +19,7 @@ const url = process.env.MONGO_URL;
 const app = express();
 
 app.use(cors({
-  origin: ["http://localhost:3000", "http://localhost:3001"],
+  origin: ["https://stock-trading-platform-frontend-u69r.onrender.com", "https://stock-trading-platform-dashbord.onrender.com"],
   credentials: true,
 }));
 app.use(bodyParser.json());
@@ -232,5 +232,5 @@ app.post("/newOrder", async (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log("App started!");
+    console.log("App started!", PORT);
 });

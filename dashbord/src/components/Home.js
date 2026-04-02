@@ -9,15 +9,15 @@ const Home = () => {
     const checkAuth = async () => {
       try {
         const { data } = await axios.post(
-          "http://localhost:3002/auth/auth-check",
+          "https://zerodha-clone-w3y8.onrender.com/auth/auth-check",
           {},
           { withCredentials: true }
         );
         if (!data.status) {
-          window.location.href = "http://localhost:3001/login";
+          window.location.href = "https://stock-trading-platform-dashbord.onrender.com/login";
         }
       } catch (error) {
-        window.location.href = "http://localhost:3001/login";
+        window.location.href = "https://stock-trading-platform-dashbord.onrender.com/login";
       }
     };
     checkAuth();

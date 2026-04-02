@@ -20,7 +20,7 @@ const Home = () => {
       }
 
       try {
-        const { data } = await axios.get("http://localhost:3002/dashboard", {
+        const { data } = await axios.get("https://zerodha-clone-w3y8.onrender.com/dashboard", {
           withCredentials: true,
         });
 

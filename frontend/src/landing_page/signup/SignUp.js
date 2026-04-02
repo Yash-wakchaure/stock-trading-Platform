@@ -18,13 +18,13 @@ const SignUp = () => {
         e.preventDefault();
         try {
             const { data } = await axios.post(
-                "http://localhost:3002/auth/signup",
+                "https://zerodha-clone-w3y8.onrender.com/auth/signup",
                 form,
                 { withCredentials: true }
             );
             if (data.success) {
                 toast.success(data.message || "Sign up successful");
-                setTimeout(() => { window.location.href = "http://localhost:3000/"; }, 700);
+                setTimeout(() => { window.location.href = "https://stock-trading-platform-dashbord.onrender.com/"; }, 700);
             } else {
                 toast.error(data.message || "Sign up failed");
             }

@@ -1,17 +1,14 @@
-import React from "react";
-import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const Menu = () => {
   const [selectedMenu, setSelectedMenu] = useState(0);
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
 
-  const handleMenuClick = (index) =>{
+  const handleMenuClick = (index) => {
     setSelectedMenu(index);
-  }
-
-  const navigate = useNavigate();
+  };
 
   const handleProfileClick = () => {
     setIsProfileDropdownOpen(!isProfileDropdownOpen);
@@ -20,14 +17,14 @@ const Menu = () => {
   const handleLogout = async () => {
     try {
       await axios.post(
-        "http://localhost:3002/auth/logout",
+        "https://zerodha-clone-w3y8.onrender.com/auth/logout",
         {},
         { withCredentials: true }
       );
     } catch (error) {
       console.error("Logout failed", error);
     }
-    window.location.href = "http://localhost:3001/login";
+    window.location.href = "https://stock-trading-platform-dashbord.onrender.com/login";
   };
 
   const menuClass = "menu";
