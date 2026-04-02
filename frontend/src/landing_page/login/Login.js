@@ -20,7 +20,7 @@ const Login = () => {
       );
       if (data.success) {
         toast.success(data.message || "Login successful");
-        setTimeout(() => { window.location.href = "https://stock-trading-platform-dashbord.onrender.com/"; }, 700);
+        setTimeout(() => { window.location.href = "https://stock-trading-platform-dashbord.onrender.com"; }, 700);
       } else {
         toast.error(data.message || "Invalid credentials");
       }

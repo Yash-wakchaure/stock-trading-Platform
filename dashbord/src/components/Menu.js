@@ -24,7 +24,7 @@ const Menu = () => {
     } catch (error) {
       console.error("Logout failed", error);
     }
-    window.location.href = "https://stock-trading-platform-dashbord.onrender.com/login";
+    window.location.href = "https://stock-trading-platform-frontend-u69r.onrender.com/login";
   };
 
   const menuClass = "menu";
@@ -71,9 +71,9 @@ const Menu = () => {
           <div className="avatar">ZU</div>
           <p className="username">USERID</p>
         </div>
-        <Link to="/login" className="logout-btn" onClick={handleLogout}>
+        <button type="button" className="logout-btn" onClick={handleLogout}>
           <p>Logout</p>
-        </Link>
+        </button>
       </div>
     </div>
   );
