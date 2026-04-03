@@ -3,8 +3,6 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import VerticalGraph from "./VerticalGraph";
 
-// import { holdings } from "../data/Data";
-
 const Holdings = () => {
 
   const [allHoldings, setAllHoldings] = useState([]);
@@ -17,7 +15,6 @@ const Holdings = () => {
   }, [])
 
 
-  // const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
   const labels = allHoldings.map(stock => stock.name);
 
   const data = {
@@ -29,13 +26,6 @@ const Holdings = () => {
         backgroundColor: 'rgba(255, 99, 132, 0.5)',
       }
     ],}
-    //     {
-    //       label: 'Dataset 2',
-    //       data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-    //       backgroundColor: 'rgba(53, 162, 235, 0.5)',
-    //     },
-    //   ],
-    // };
 
     return(
     <>

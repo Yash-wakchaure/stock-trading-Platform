@@ -24,7 +24,7 @@ const SignUp = () => {
             );
             if (data.success) {
                 toast.success(data.message || "Sign up successful");
-                setTimeout(() => { window.location.href = "https://stock-trading-platform-dashbord.onrender.com/"; }, 700);
+                setTimeout(() => { navigate("/dashboard"); }, 700);
             } else {
                 toast.error(data.message || "Sign up failed");
             }

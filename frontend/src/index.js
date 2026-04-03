@@ -10,11 +10,12 @@ import Products from './landing_page/product/ProductPage';
 import Support from './landing_page/support/SupportPage';
 import SignUp from './landing_page/signup/SignUp';
 import Login from './landing_page/login/Login';
-import Home from "./landing_page/home/Home";
 import AboutPage from './landing_page/about/AboutPage';
 import Navbar from './landing_page/Navbar';
 import Footer from './landing_page/Footer';
 import NotFound from './landing_page/NotFound';
+
+import DashboardHome from './dashboard/components/Home';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -28,11 +29,12 @@ root.render(
         <Route path="/products" element={<Products />}></Route>
         <Route path="/pricing" element={<Pricing />}></Route>
         <Route path="/support" element={<Support />}></Route>
-        <Route path="/dashboard" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/dashboard/*" element={<DashboardHome />} />
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
       <Footer />
     </BrowserRouter>
   </CookiesProvider>
 );
+

@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from "react";
-import { positions } from "../data/Data";
 import axios from "axios";
 
 

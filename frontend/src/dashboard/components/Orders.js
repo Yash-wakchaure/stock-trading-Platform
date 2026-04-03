@@ -17,7 +17,7 @@ const Orders = () => {
       {allOrders.length === 0 ? (
         <div className="no-orders">
           <p>You haven't placed any orders today</p>
-          <Link to={"/"} className="btn">
+          <Link to={"/dashboard"} className="btn">
             Get started
           </Link>
         </div>

@@ -45,7 +45,7 @@
   }
   
   .market-options label,
-  .order-validity label input,
+  .order-validity label,
   .sub-order-type label,
   .sub-order-type label input,
   .stop-loss-type label,
@@ -224,4 +224,3 @@
     background: #9b9b9b;
     color: #fff;
   }
-  
