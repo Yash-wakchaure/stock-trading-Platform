@@ -16,11 +16,13 @@ module.exports.Signup = async (req, res, next) => {
     const user = await UserModel.create({ email, password: hashedPassword, username });
     const token = createSecretToken(user._id);
 
-    // Set cookie
+    // Set cookie with cross-domain settings
     res.cookie("token", token, {
       withCredentials: true,
       httpOnly: false,
-      path: "/"
+      path: "/",
+      sameSite: "None",
+      secure: true
     });
 
     res.status(201).json({
@@ -67,7 +69,9 @@ module.exports.Login = async (req, res, next) => {
     res.cookie("token", token, {
       withCredentials: true,
       httpOnly: false,
-      path: "/"
+      path: "/",
+      sameSite: "None",
+      secure: true
     });
 
     res.status(201).json({
@@ -88,6 +92,8 @@ module.exports.Logout = async (req, res) => {
     httpOnly: false,
     expires: new Date(0),
     path: "/",
+    sameSite: "None",
+    secure: true
   });
   res.json({ message: "Logged out", success: true });
 };

@@ -1,10 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import Dashboard from "./Dashboard";
 import TopBar from "./TopBar";
 
 const Home = () => {
+  const [username, setUsername] = useState("");
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const checkAuth = async () => {
       try {
@@ -13,20 +16,27 @@ const Home = () => {
           {},
           { withCredentials: true }
         );
-        if (!data.status) {
-          window.location.href = "https://stock-trading-platform-dashbord.onrender.com";
+        if (data.status && data.user) {
+          setUsername(data.user);
+          setLoading(false);
+        } else {
+          window.location.href = "https://stock-trading-platform-frontend-u69r.onrender.com/login";
         }
       } catch (error) {
-        window.location.href = "https://stock-trading-platform-dashbord.onrender.com";
+        window.location.href = "https://stock-trading-platform-frontend-u69r.onrender.com/login";
       }
     };
     checkAuth();
   }, []);
 
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
-      <TopBar />
-      <Dashboard />
+      <TopBar username={username} />
+      <Dashboard username={username} />
     </>
   );
 };

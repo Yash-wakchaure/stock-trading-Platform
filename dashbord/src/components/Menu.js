@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-const Menu = () => {
+const Menu = ({ username }) => {
   const [selectedMenu, setSelectedMenu] = useState(0);
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
 
@@ -29,6 +29,7 @@ const Menu = () => {
 
   const menuClass = "menu";
   const activeMenuClass = "menu selected";
+  const initials = username ? username.substring(0, 2).toUpperCase() : "ZU";
 
   return (
     <div className="menu-container">
@@ -68,8 +69,8 @@ const Menu = () => {
         </ul>
         <hr />
         <div className="profile" onClick={handleProfileClick}>
-          <div className="avatar">ZU</div>
-          <p className="username">USERID</p>
+          <div className="avatar">{initials}</div>
+          <p className="username">{username || "User"}</p>
         </div>
         <button type="button" className="logout-btn" onClick={handleLogout}>
           <p>Logout</p>
