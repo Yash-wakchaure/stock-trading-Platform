@@ -14,10 +14,10 @@ const Home = () => {
           { withCredentials: true }
         );
         if (!data.status) {
-          window.location.href = "https://stock-trading-platform-frontend-u69r.onrender.com/login";
+          window.location.href = "https://stock-trading-platform-dashbord.onrender.com";
         }
       } catch (error) {
-        window.location.href = "https://stock-trading-platform-frontend-u69r.onrender.com/login";
+        window.location.href = "https://stock-trading-platform-dashbord.onrender.com";
       }
     };
     checkAuth();
